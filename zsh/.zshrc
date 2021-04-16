@@ -21,15 +21,23 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7877ab"
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# (zsh-syntax-highlighting must be last)
+# (if using zsh-syntax-highlighting, it must be placed last)
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+
+# exa -- a modern replacement for ls
+# https://the.exa.website/docs/colour-themes
+export LS_COLORS="di=1;35:ln=1;34"
+export EXA_COLORS="ur=1;34:uw=1;36:ux=1;33:ue=1;33:gr=34:gw=36:gx=33:tr=34:tw=36:tx=33:xa=30:da=30:uu=30:un=37:gu=30:gn=37:gm=33:gv=36:xx=30:hd=30"
 
 # Aliases
 alias l="exa --all --long --git --color-scale --time-style=long-iso"
 alias ll="l --tree --level=2"
 alias lll="l --tree --level=3"
+
+
+# Python
 
 eval "$(pyenv init - zsh --no-rehash)"
 eval "$(pyenv virtualenv-init -)"
