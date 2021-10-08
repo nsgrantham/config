@@ -1,0 +1,58 @@
+{
+  "editor.fontFamily": "InputMono-Light",
+  "window.titleBarStyle": "custom",
+  "editor.minimap.enabled": false,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.padding.top": 15,
+  "breadcrumbs.enabled": false,
+  "terminal.integrated.inheritEnv": false,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "line",
+  "[javascript]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": null,
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file"
+  },
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Path": "/Users/neal/.local/bin/flake8",
+  "python.linting.flake8Args": [
+    "--extend-ignore", "E203,W503",
+    "--max-line-length", "88"
+  ],
+  "python.linting.lintOnSave": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/Users/neal/.local/bin/black",
+  "r.sessionWatcher": true,
+  "r.rmarkdown.chunkBackgroundColor": "#403E64",
+  "workbench.colorTheme": "Poolside",
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  "terminal.integrated.commandsToSkipShell": [
+    "language-julia.interrupt"
+  ],
+  "julia.enableTelemetry": false,
+  "workbench.iconTheme": null,
+  "workbench.activityBar.visible": false,
+  "workbench.statusBar.visible": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.overviewRulerBorder": false,
+  "editor.overviewRulerLanes": 0,
+  "editor.cursorStyle": "line",
+  "editor.lineNumbers": "on",
+  "editor.parameterHints.enabled": false,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false
+}
