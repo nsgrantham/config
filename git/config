@@ -1,8 +1,8 @@
 [user]
-	name = Neal Grantham
-	email = neal@nsgrantham.com
+  name = Neal Grantham
+  email = neal@nsgrantham.com
 [color]
-	ui = true
+  ui = true
 [color "status"]
   added = green
   changed = yellow
@@ -10,13 +10,13 @@
 [color "branch"]
   remote = yellow bold
 [init]
-	defaultBranch = main
+  defaultBranch = main
 [alias]
-	co = checkout
-	br = branch
-	cm = commit -m
-	st = status
-	unstage = reset HEAD --
-	last = log -1 HEAD
+  co = checkout
+  br = branch
+  cm = commit -m
+  st = status
+  unstage = reset HEAD --
+  last = log -1 HEAD
 [core]
-	editor = code -w
+  editor = code -w
