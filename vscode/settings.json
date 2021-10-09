@@ -34,6 +34,8 @@
   "python.formatting.blackPath": "/Users/neal/.local/bin/black",
   "r.sessionWatcher": true,
   "r.rmarkdown.chunkBackgroundColor": "#403E64",
+  "r.lintr.enabled": false,
+  "r.rmarkdown.lintr.enabled": false,
   "workbench.colorTheme": "Poolside",
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
@@ -54,5 +56,6 @@
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
   "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "window.zoomLevel": 1
 }
