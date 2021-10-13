@@ -1,15 +1,63 @@
 {
+  //"window.titleBarStyle": "custom",
+  "window.zoomLevel": 1,
+  // Disable file icons next to files in sidebar
+  "workbench.iconTheme": null,
+  // Remove activity bar from left side
+  // (Rely instead on shortcuts in keybindings.json)
+  "workbench.activityBar.visible": false,
+  // Remove status bar from bottom of window
+  "workbench.statusBar.visible": false,
+  // My custom color theme
+  // https://marketplace.visualstudio.com/items?itemName=nsgrantham.poolside
+  "workbench.colorTheme": "Poolside",
+  // Make all marks in the gutter and scrollbar area invisible
+  // https://stackoverflow.com/a/51684408
+  // (Uses #RGBA shorthand rather than #RRGGBBAA)
+  "workbench.colorCustomizations": {
+    "editorGutter.addedBackground": "#0000",
+    "editorGutter.modifiedBackground": "#0000",
+    "editorGutter.deletedBackground": "#0000",
+    "editorOverviewRuler.border": "#0000",
+    "editorOverviewRuler.addedForeground": "#0000",
+    "editorOverviewRuler.modifiedForeground": "#0000",
+    "editorOverviewRuler.deletedForeground": "#0000",
+    "editorOverviewRuler.errorForeground": "#0000",
+    "editorOverviewRuler.warningForeground": "#0000",
+    "editorOverviewRuler.infoForeground": "#0000",
+    "editorOverviewRuler.bracketMatchForeground": "#0000",
+    "editorOverviewRuler.findMatchForeground": "#0000",
+    "editorOverviewRuler.rangeHighlightForeground": "#0000",
+    "editorOverviewRuler.selectionHighlightForeground": "#0000",
+    "editorOverviewRuler.wordHighlightForeground": "#0000",
+    "editorOverviewRuler.wordHighlightStrongForeground": "#0000"
+  },
+  "workbench.editorAssociations": {
+    "*.ipynb": "jupyter.notebook.ipynb"
+  },
+  // My favorite monospace font, available at https://input.djr.com/
   "editor.fontFamily": "InputMono-Light",
-  "window.titleBarStyle": "custom",
   "editor.minimap.enabled": false,
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
   "editor.detectIndentation": false,
   "editor.padding.top": 15,
+  "editor.renderLineHighlight": "none",
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.cursorStyle": "line",
+  "editor.lineNumbers": "on",
+  "editor.parameterHints.enabled": false,
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+  "editor.wordWrap": "off",
+  // Disable the file path breadcrumbs that appear above the Editor
   "breadcrumbs.enabled": false,
+  // Disable inherit environment feature because it clashes with conda environments
   "terminal.integrated.inheritEnv": false,
   "terminal.integrated.cursorBlinking": true,
   "terminal.integrated.cursorStyle": "line",
+  "terminal.integrated.commandsToSkipShell": [
+    "language-julia.interrupt"
+  ],
   "[javascript]": {
     "editor.formatOnSave": true,
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -22,6 +70,9 @@
     "editor.formatOnSave": true,
     "editor.formatOnSaveMode": "file"
   },
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/Users/neal/.local/bin/black",
+  "python.linting.lintOnSave": true,
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
   "python.linting.flake8Path": "/Users/neal/.local/bin/flake8",
@@ -29,33 +80,16 @@
     "--extend-ignore", "E203,W503",
     "--max-line-length", "88"
   ],
-  "python.linting.lintOnSave": true,
-  "python.formatting.provider": "black",
-  "python.formatting.blackPath": "/Users/neal/.local/bin/black",
+  // The following settings are specific to the R extension
+  // https://marketplace.visualstudio.com/items?itemName=Ikuyadeu.r
   "r.sessionWatcher": true,
+  // Match the Rmd chunk color with my custom color theme
   "r.rmarkdown.chunkBackgroundColor": "#403E64",
+  // Disable R linting (not sure if all of the following are necessary)
+  "r.lsp.diagnostics": false,
   "r.lintr.enabled": false,
   "r.rmarkdown.lintr.enabled": false,
-  "workbench.colorTheme": "Poolside",
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
-  },
-  "terminal.integrated.commandsToSkipShell": [
-    "language-julia.interrupt"
-  ],
   "julia.enableTelemetry": false,
-  "workbench.iconTheme": null,
-  "workbench.activityBar.visible": false,
-  "workbench.statusBar.visible": false,
-  "editor.hideCursorInOverviewRuler": true,
-  "editor.overviewRulerBorder": false,
-  "editor.overviewRulerLanes": 0,
-  "editor.cursorStyle": "line",
-  "editor.lineNumbers": "on",
-  "editor.parameterHints.enabled": false,
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-  "editor.wordWrap": "off",
   "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false,
-  "window.zoomLevel": 1
+  "explorer.confirmDragAndDrop": false
 }
