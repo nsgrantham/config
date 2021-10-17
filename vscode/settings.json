@@ -1,95 +1,160 @@
 {
-  //"window.titleBarStyle": "custom",
-  "window.zoomLevel": 1,
-  // Disable file icons next to files in sidebar
-  "workbench.iconTheme": null,
-  // Remove activity bar from left side
-  // (Rely instead on shortcuts in keybindings.json)
-  "workbench.activityBar.visible": false,
-  // Remove status bar from bottom of window
-  "workbench.statusBar.visible": false,
-  // My custom color theme
-  // https://marketplace.visualstudio.com/items?itemName=nsgrantham.poolside
-  "workbench.colorTheme": "Poolside",
-  // Make all marks in the gutter and scrollbar area invisible
-  // https://stackoverflow.com/a/51684408
-  // (Uses #RGBA shorthand rather than #RRGGBBAA)
-  "workbench.colorCustomizations": {
-    "editorGutter.addedBackground": "#0000",
-    "editorGutter.modifiedBackground": "#0000",
-    "editorGutter.deletedBackground": "#0000",
-    "editorOverviewRuler.border": "#0000",
-    "editorOverviewRuler.addedForeground": "#0000",
-    "editorOverviewRuler.modifiedForeground": "#0000",
-    "editorOverviewRuler.deletedForeground": "#0000",
-    "editorOverviewRuler.errorForeground": "#0000",
-    "editorOverviewRuler.warningForeground": "#0000",
-    "editorOverviewRuler.infoForeground": "#0000",
-    "editorOverviewRuler.bracketMatchForeground": "#0000",
-    "editorOverviewRuler.findMatchForeground": "#0000",
-    "editorOverviewRuler.rangeHighlightForeground": "#0000",
-    "editorOverviewRuler.selectionHighlightForeground": "#0000",
-    "editorOverviewRuler.wordHighlightForeground": "#0000",
-    "editorOverviewRuler.wordHighlightStrongForeground": "#0000"
-  },
-  "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
-  },
-  // My favorite monospace font, available at https://input.djr.com/
-  "editor.fontFamily": "InputMono-Light",
-  "editor.minimap.enabled": false,
-  "editor.tabSize": 2,
-  "editor.insertSpaces": true,
-  "editor.detectIndentation": false,
-  "editor.padding.top": 15,
-  "editor.renderLineHighlight": "none",
-  "editor.hideCursorInOverviewRuler": true,
-  "editor.cursorStyle": "line",
-  "editor.lineNumbers": "on",
-  "editor.parameterHints.enabled": false,
-  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-  "editor.wordWrap": "off",
-  // Disable the file path breadcrumbs that appear above the Editor
-  "breadcrumbs.enabled": false,
-  // Disable inherit environment feature because it clashes with conda environments
-  "terminal.integrated.inheritEnv": false,
-  "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.cursorStyle": "line",
-  "terminal.integrated.commandsToSkipShell": [
-    "language-julia.interrupt"
-  ],
-  "[javascript]": {
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[python]": {
-    "editor.insertSpaces": false,
+    // Better Defaults
+    //"window.nativeFullScreen": false,
+    "files.insertFinalNewline": true,
+    "editor.detectIndentation": false,
+    "files.insertFinalNewlines": true,
+    "editor.snippetSuggestions": "top",
+    "diffEditor.renderSideBySide": false,
+    "files.trimTrailingWhitespace": true,
+    "window.newWindowDimensions": "inherit",
+    "editor.multiCursorModifier": "ctrlCmd",  // hold Cmd and click to place cursor
+    "workbench.editor.enablePreview": false,
+    "editor.emptySelectionClipboard": false,  // do not overwrite clipboard on accident when nothing is selected
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.copyWithSyntaxHighlighting": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+
+    // Silence the Noise
+    "workbench.iconTheme": null,
+    "editor.lineNumbers": "off",
+    "breadcrumbs.enabled": false,
+    "scm.diffDecorations": "none",
+    "editor.matchBrackets": "never",
+    "editor.minimap.enabled": false,
+    "workbench.tips.enabled": false,
+    "git.decorations.enabled": false,
+    "workbench.startupEditor": "none",
+    "editor.lightbulb.enabled": false,
+    "workbench.editor.showTabs": false,  // instead navigate with Cmd+P
+    "editor.selectionHighlight": false,
+    "editor.renderIndentGuides": false,
+    "editor.renderLineHighlight": "none",
+    "editor.occurrencesHighlight": false,
+    "workbench.statusBar.visible": false,
+    "workbench.sideBar.location": "right",
+    "problems.decorations.enabled": false,
+    "editor.parameterHints.enabled": false,
+    "workbench.activityBar.visible": false,
+    "editor.renderControlCharacters": false,
+    "editor.hideCursorInOverviewRuler": true,
+
+    // Window
+    //"window.titleBarStyle": "custom",
+    "window.title": "",
+    "window.zoomLevel": 1,
+
+    // Color Theme & Customizations
+    "workbench.colorTheme": "Poolside", // https://marketplace.visualstudio.com/items?itemName=nsgrantham.poolside
+    "workbench.colorCustomizations": {
+        // Adjust color to blend in with Editor and Terminal
+        "titleBar.activeBackground": "#353454",
+        "titleBar.inactiveBackground": "#353454",
+        "panelTitle.activeBorder": "#353454",
+        "scrollbar.shadow": "#353454",
+        "panel.border": "#474670",
+        "editorGroup.border": "#474670",
+        // Make all marks in the gutter and scrollbar area invisible
+        // https://stackoverflow.com/a/51684408
+        // (Uses #RGBA shorthand rather than #RRGGBBAA)
+        "editorGutter.addedBackground": "#0000",
+        "editorGutter.deletedBackground": "#0000",
+        "editorGutter.modifiedBackground": "#0000",
+        "editorOverviewRuler.border": "#0000",
+        "editorOverviewRuler.addedForeground": "#0000",
+        "editorOverviewRuler.deletedForeground": "#0000",
+        "editorOverviewRuler.modifiedForeground": "#0000",
+        "editorOverviewRuler.infoForeground": "#0000",
+        "editorOverviewRuler.errorForeground": "#0000",
+        "editorOverviewRuler.warningForeground": "#0000",
+        "editorOverviewRuler.findMatchForeground": "#0000",
+        "editorOverviewRuler.bracketMatchForeground": "#0000",
+        "editorOverviewRuler.wordHighlightForeground": "#0000",
+        "editorOverviewRuler.rangeHighlightForeground": "#0000",
+        "editorOverviewRuler.selectionHighlightForeground": "#0000",
+        "editorOverviewRuler.wordHighlightStrongForeground": "#0000"
+    },
+
+    // Spacing
     "editor.tabSize": 4,
-    "editor.defaultFormatter": null,
-    "editor.formatOnPaste": false,
-    "editor.formatOnSave": true,
-    "editor.formatOnSaveMode": "file"
-  },
-  "python.formatting.provider": "black",
-  "python.formatting.blackPath": "/Users/neal/.local/bin/black",
-  "python.linting.lintOnSave": true,
-  "python.linting.pylintEnabled": false,
-  "python.linting.flake8Enabled": true,
-  "python.linting.flake8Path": "/Users/neal/.local/bin/flake8",
-  "python.linting.flake8Args": [
-    "--extend-ignore", "E203,W503",
-    "--max-line-length", "88"
-  ],
-  // The following settings are specific to the R extension
-  // https://marketplace.visualstudio.com/items?itemName=Ikuyadeu.r
-  "r.sessionWatcher": true,
-  // Match the Rmd chunk color with my custom color theme
-  "r.rmarkdown.chunkBackgroundColor": "#403E64",
-  // Disable R linting (not sure if all of the following are necessary)
-  "r.lsp.diagnostics": false,
-  "r.lintr.enabled": false,
-  "r.rmarkdown.lintr.enabled": false,
-  "julia.enableTelemetry": false,
-  "explorer.confirmDelete": false,
-  "explorer.confirmDragAndDrop": false
+    "editor.wordWrap": "off",
+    "editor.padding.top": 15,
+    "editor.insertSpaces": true,
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+
+    // Misc.
+    "editor.cursorStyle": "line",  // has no effect if Vim is enabled
+    "editor.gotoLocation.multipleReferences": "goto",
+    "editor.gotoLocation.multipleDefinitions": "goto",
+    "editor.gotoLocation.multipleDeclarations": "goto",
+    "editor.gotoLocation.multipleImplementations": "goto",
+    "editor.gotoLocation.multipleTypeDefinitions": "goto",
+
+    // Typography
+    "editor.fontFamily": "InputMono-ExtraLight",  // available at https://input.djr.com/
+    "editor.fontSize": 12,
+    "editor.lineHeight": 18,
+    "editor.suggestFontSize": 12,
+    "editor.suggestLineHeight": 18,
+    "terminal.integrated.fontSize": 12,
+    "terminal.integrated.lineHeight": 1,
+
+    // Integrated Terminal
+    "terminal.integrated.inheritEnv": false,  // inheritEnv clashes with conda environments
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.commandsToSkipShell": [
+        "language-julia.interrupt"
+    ],
+
+    // File Explorer
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "explorer.openEditors.visible": 0,
+
+    // Search
+    "search.useIgnoreFiles": false,
+
+    // JavaScript
+    "[javascript]": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    // Python
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": "/Users/neal/.local/bin/black",
+    "python.linting.lintOnSave": true,
+    "python.linting.pylintEnabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "/Users/neal/.local/bin/flake8",
+    "python.linting.flake8Args": [
+        "--extend-ignore", "E203,W503",
+        "--max-line-length", "88"
+    ],
+    "[python]": {
+        "editor.tabSize": 4,
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": false,
+        "editor.formatOnPaste": false,
+        "editor.defaultFormatter": null,
+        "editor.formatOnSaveMode": "file"
+    },
+
+    // R
+    // https://marketplace.visualstudio.com/items?itemName=Ikuyadeu.r
+    "r.sessionWatcher": true,
+    "r.helpPanel.enableSyntaxHighlighting": false,
+    "r.rmarkdown.chunkBackgroundColor": "#44436c80", // match with Poolside theme, must be slightly transparent
+    // Disable linting (not sure if all 3 of the following are necessary)
+    "r.lsp.diagnostics": false,
+    "r.lintr.enabled": false,
+    "r.rmarkdown.lintr.enabled": false,
+
+    // Julia
+    "julia.enableTelemetry": false,
+    "julia.symbolCacheDownload": true
 }
