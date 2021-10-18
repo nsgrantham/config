@@ -102,7 +102,9 @@
     // Integrated Terminal
     "terminal.integrated.inheritEnv": false,  // inheritEnv clashes with conda environments
     "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.showLinkHover": false,
     "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.defaultLocation": "editor",  // open on right, not bottom
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
     ],
@@ -127,6 +129,7 @@
     },
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "/Users/neal/.local/bin/black",
+    "python.analysis.useImportHeuristic": true,  // https://github.com/microsoft/pylance-release/issues/519#issuecomment-828355840
     "python.linting.lintOnSave": true,
     "python.linting.pylintEnabled": false,
     "python.linting.flake8Enabled": true,
@@ -138,7 +141,7 @@
     "[python]": {
         "editor.tabSize": 4,
         "editor.formatOnSave": true,
-        "editor.insertSpaces": false,
+        "editor.insertSpaces": true,
         "editor.formatOnPaste": false,
         "editor.defaultFormatter": null,
         "editor.formatOnSaveMode": "file"
@@ -148,7 +151,7 @@
     // https://marketplace.visualstudio.com/items?itemName=Ikuyadeu.r
     "r.sessionWatcher": true,
     "r.helpPanel.enableSyntaxHighlighting": false,
-    "r.rmarkdown.chunkBackgroundColor": "#44436c80", // match with Poolside theme, must be slightly transparent
+    "r.rmarkdown.chunkBackgroundColor": "#44436c80", // match with theme, must be slightly transparent
     // Disable linting (not sure if all 3 of the following are necessary)
     "r.lsp.diagnostics": false,
     "r.lintr.enabled": false,
