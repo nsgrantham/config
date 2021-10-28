@@ -16,6 +16,8 @@
     "workbench.editor.enablePreviewFromQuickOpen": false,
 
     // Silence the Noise
+    "editor.folding": false,
+    //"editor.glyphMargin": false,
     "workbench.iconTheme": null,
     "editor.lineNumbers": "off",
     "breadcrumbs.enabled": false,
@@ -78,12 +80,12 @@
     // Customize UI
     // https://marketplace.visualstudio.com/items?itemName=iocave.customize-ui
     "window.titleBarStyle": "native",
-    "customizeUI.titleBar": "inline",
+    "customizeUI.titleBar": "frameless",
     "customizeUI.listRowHeight": 18, // line height in sidebar (VSC default is 22)
     "customizeUI.font.regular": "Inter",
     "customizeUI.font.monospace": "InputMono-ExtraLight",
     "customizeUI.stylesheet": {
-        // ".editor .title": "background: transparent !important;",
+        //".editor .title": "background: transparent !important;",
         // ".editor .title .label-container": "visibility: hidden;",
         // Change colors of file name and path in Editor title
         ".editor .title .label-container .label-name": "color: #F2EDED;",
@@ -95,7 +97,7 @@
         ".panel .title .global-actions .actions-container .action-item a": "visibility: hidden;",
         // Edit Terminal title
         ".panel .title .composite-bar .actions-container .action-item a": "text-transform: none; font-size: 12px;",
-        // Expand height
+        // Expand height of Terminal content
         // ".monaco-workbench .editor-instance .terminal-wrapper, .monaco-workbench .pane-body.integrated-terminal .terminal-wrapper": "height: auto;",
         // Only show the scrollbar on hover
         ".editor .scrollbar .slider": "visibility: hidden;",
