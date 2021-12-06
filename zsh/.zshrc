@@ -16,7 +16,7 @@ HYPHEN_INSENSITIVE="true"
 # Skip the verification of insecure directories
 ZSH_DISABLE_COMPFIX="true"
 
-# Color of zsh-autoseggestions
+# Color of zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7877ab"
 
 # Standard plugins can be found in $ZSH/plugins/
@@ -28,8 +28,8 @@ source $ZSH/oh-my-zsh.sh
 
 # exa -- a modern replacement for ls
 # https://the.exa.website/docs/colour-themes
-export LS_COLORS="di=1;35:ln=1;34"
-export EXA_COLORS="ur=1;34:uw=1;36:ux=1;33:ue=1;33:gr=34:gw=36:gx=33:tr=34:tw=36:tx=33:xa=30:da=30:uu=30:un=37:gu=30:gn=37:gm=33:gv=36:xx=30:hd=30"
+export LS_COLORS="di=1;35:ln=1;34:*.jpg=36:*.jpeg=36:*.png=36:*.PNG=36:*.svg=36:*.pdf=33:*.zip=35"
+export EXA_COLORS="ur=34:uw=34:ux=34:ue=34:gr=36:gw=36:gx=36:tr=33:tw=33:tx=33:xa=30:da=30:uu=30:un=37:gu=30:gn=37:gm=33:gv=36:xx=30:hd=30"
 
 # Aliases
 alias l="exa --all --long --git --color-scale --time-style=long-iso"
