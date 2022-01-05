@@ -125,8 +125,17 @@
         "when": "editorFocus"
     },
 
+    // Move Terminal Panel
+    {
+        "key": "cmd+k cmd+j",
+        "command": "workbench.action.positionPanelBottom"
+    },
+    {
+        "key": "cmd+k cmd+l",
+        "command": "workbench.action.positionPanelRight"
+    },
 
-    // Terminal Split Panel
+    // Split Terminal
     {
         "key": "ctrl+n",
         "command": "workbench.action.terminal.split",

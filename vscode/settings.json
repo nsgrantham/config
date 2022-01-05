@@ -4,7 +4,6 @@
     "files.insertFinalNewline": true,
     "editor.detectIndentation": false,
     "files.insertFinalNewlines": true,
-    "editor.snippetSuggestions": "top",
     "diffEditor.renderSideBySide": false,
     "files.trimTrailingWhitespace": true,
     "window.newWindowDimensions": "inherit",
@@ -22,15 +21,18 @@
     "editor.lineNumbers": "off",
     "breadcrumbs.enabled": false,
     "scm.diffDecorations": "none",
+    "editor.parameterHints": false,
     "editor.matchBrackets": "never",
+    "window.restoreWindows": "none",
     "editor.minimap.enabled": false,
     "workbench.tips.enabled": false,
     "git.decorations.enabled": false,
     "workbench.startupEditor": "none",
     "editor.lightbulb.enabled": false,
-    "workbench.editor.showTabs": false,  // instead navigate with Cmd+P
+    "workbench.editor.showTabs": false, // instead navigate with Cmd+P
     "editor.selectionHighlight": false,
     "editor.renderIndentGuides": false,
+    "editor.snippetSuggestions": "none",
     "editor.renderLineHighlight": "none",
     "editor.occurrencesHighlight": false,
     "workbench.statusBar.visible": false,
@@ -40,11 +42,12 @@
     "workbench.activityBar.visible": false,
     "editor.renderControlCharacters": false,
     "editor.hideCursorInOverviewRuler": true,
+    "workbench.panel.opensMaximized": "never",
+    "workbench.panel.defaultLocation": "right",
 
     // Window
     // "window.titleBarStyle": "custom",
     "window.title": "",
-    "window.zoomLevel": 1,
 
     // Color Theme & Customizations
     "workbench.colorTheme": "Poolside", // https://marketplace.visualstudio.com/items?itemName=nsgrantham.poolside
@@ -81,7 +84,7 @@
     // https://marketplace.visualstudio.com/items?itemName=iocave.customize-ui
     "window.titleBarStyle": "native",
     "customizeUI.titleBar": "frameless",
-    "customizeUI.listRowHeight": 18, // line height in sidebar (VSC default is 22)
+    "customizeUI.listRowHeight": 20, // line height in sidebar (VSC default is 22)
     "customizeUI.font.regular": "Inter",
     "customizeUI.font.monospace": "InputMono-ExtraLight",
     "customizeUI.stylesheet": {
@@ -135,7 +138,7 @@
     "terminal.integrated.cursorStyle": "line",
     "terminal.integrated.showLinkHover": false,
     "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.defaultLocation": "editor",  // open on right, not bottom
+    // "terminal.integrated.defaultLocation": "editor",  // open on right, not bottom (don't think this works)
     "terminal.integrated.commandsToSkipShell": [
         "language-julia.interrupt"
     ],
@@ -194,6 +197,20 @@
     "r.rmarkdown.lintr.enabled": false,
 
     // Julia
+    "julia.executablePath": "/Applications/Julia-1.6.app/Contents/Resources/julia/bin/julia",
+    "julia.execution.resultType": "REPL",
+    "julia.execution.codeInREPL": true,
     "julia.enableTelemetry": false,
-    "julia.symbolCacheDownload": true
+    "julia.symbolCacheDownload": true,
+
+    // SQL
+    "sql.linter.executablePath": "/Users/neal/.local/bin/sqlfluff",
+    "sql.linter.run": "onSave",
+
+    // dbt
+    "files.associations": {
+        "*.sql": "jinja-sql",
+        "**/target/**": ""  // do not highlight compiled model files
+    },
+    "window.zoomLevel": 1
 }
