@@ -1,6 +1,7 @@
 {
     // Better Defaults
     //"window.nativeFullScreen": false,
+    "window.zoomLevel": 1,
     "files.insertFinalNewline": true,
     "editor.detectIndentation": false,
     "files.insertFinalNewlines": true,
@@ -21,18 +22,19 @@
     "editor.lineNumbers": "off",
     "breadcrumbs.enabled": false,
     "scm.diffDecorations": "none",
-    "editor.parameterHints": false,
+    "editor.hover.enabled": false,
     "editor.matchBrackets": "never",
     "window.restoreWindows": "none",
     "editor.minimap.enabled": false,
     "workbench.tips.enabled": false,
     "git.decorations.enabled": false,
+    // "editor.quickSuggestions": false,
     "workbench.startupEditor": "none",
     "editor.lightbulb.enabled": false,
     "workbench.editor.showTabs": false, // instead navigate with Cmd+P
     "editor.selectionHighlight": false,
     "editor.renderIndentGuides": false,
-    "editor.snippetSuggestions": "none",
+    // "editor.snippetSuggestions": "none",
     "editor.renderLineHighlight": "none",
     "editor.occurrencesHighlight": false,
     "workbench.statusBar.visible": false,
@@ -44,6 +46,41 @@
     "editor.hideCursorInOverviewRuler": true,
     "workbench.panel.opensMaximized": "never",
     "workbench.panel.defaultLocation": "right",
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.unicodeHighlight.ambiguousCharacters": false,
+
+    // No Suggestions
+    "editor.suggest.showEnums": false,
+    "editor.suggest.showFiles": false,
+    "editor.suggest.showIcons": false,
+    "editor.suggest.showWords": false,
+    "editor.suggest.showUnits": false,
+    "editor.suggest.showUsers": false,
+    "editor.suggest.showColors": false,
+    "editor.suggest.showEvents": false,
+    "editor.suggest.showFields": false,
+    "editor.suggest.showIssues": false,
+    "editor.suggest.showValues": false,
+    "editor.suggest.showClasses": false,
+    "editor.suggest.showFolders": false,
+    "editor.suggest.showMethods": false,
+    "editor.suggest.showModules": false,
+    "editor.suggest.showStructs": false,
+    "editor.suggest.showKeywords": false,
+    "editor.suggest.showSnippets": false,
+    "editor.suggest.showConstants": false,
+    "editor.suggest.showFunctions": false,
+    "editor.suggest.showOperators": false,
+    "editor.suggest.showVariables": false,
+    "editor.suggest.showDeprecated": false,
+    "editor.suggest.showInterfaces": false,
+    "editor.suggest.showProperties": false,
+    "editor.suggest.showReferences": false,
+    "editor.suggest.showEnumMembers": false,
+    "editor.suggest.showConstructors": false,
+    "editor.suggest.showCustomcolors": false,
+    "editor.suggest.showInlineDetails": false,
+    "editor.suggest.showTypeParameters": false,
 
     // Window
     // "window.titleBarStyle": "custom",
@@ -202,6 +239,9 @@
     "julia.execution.codeInREPL": true,
     "julia.enableTelemetry": false,
     "julia.symbolCacheDownload": true,
+    // "julia.completionmode": "exportedonly",
+    "julia.runtimeCompletions": false,
+    "julia.lint.run": false,
 
     // SQL
     "sql.linter.executablePath": "/Users/neal/.local/bin/sqlfluff",
@@ -211,6 +251,5 @@
     "files.associations": {
         "*.sql": "jinja-sql",
         "**/target/**": ""  // do not highlight compiled model files
-    },
-    "window.zoomLevel": 1
+    }
 }
