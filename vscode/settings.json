@@ -54,7 +54,7 @@
     "editor.suggest.showFiles": false,
     "editor.suggest.showIcons": false,
     "editor.suggest.showWords": false,
-    "editor.suggest.showUnits": false,
+    //"editor.suggest.showUnits": false,  // must be enabled for greek letters completions in Julia
     "editor.suggest.showUsers": false,
     "editor.suggest.showColors": false,
     "editor.suggest.showEvents": false,
