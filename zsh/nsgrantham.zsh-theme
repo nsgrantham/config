@@ -1,5 +1,4 @@
 # nsgrantham.zsh-theme
-# nsgrantham.com
 
 local current_dir='${PWD/#$HOME/~}'
 

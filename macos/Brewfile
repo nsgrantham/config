@@ -1,0 +1,44 @@
+brew 'openssl'
+brew 'readline'
+brew 'ffmpeg'
+
+brew 'awk'
+brew 'duckdb'
+brew 'exa'
+brew 'htop'
+brew 'imagemagick'
+brew 'jq'
+brew 'libgit2'
+brew 'mas'
+brew 'neovim'
+brew 'pandoc'
+brew 'pass'
+brew 'postgresql'
+brew 'reattach-to-user-namespace'
+brew 'sqlite'
+brew 'tldr'
+brew 'tree'
+brew 'wget'
+brew 'zsh'
+
+cask_args appdir: '/Applications'
+
+cask 'alfred'
+cask 'deckset'
+cask 'firefox'
+cask 'flux'
+cask 'google-chrome'
+cask 'iterm2'
+cask 'julia'
+cask 'notion'
+cask 'opera'
+cask 'rstudio'
+cask 'slack'
+cask 'spotify'
+cask 'visual-studio-code'
+cask 'vlc'
+
+mas "Things", id: 904280696
+mas "Tweetbot", id: 1384080005
+mas "Poolsuite FM", id: 1514817810
+

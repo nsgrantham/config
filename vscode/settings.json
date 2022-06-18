@@ -1,6 +1,6 @@
 {
     // Better Defaults
-    //"window.nativeFullScreen": false,
+    "update.mode": "none",
     "window.zoomLevel": 1,
     "files.insertFinalNewline": true,
     "editor.detectIndentation": false,
@@ -214,6 +214,12 @@
         "--extend-ignore", "E203,W503",
         "--max-line-length", "88"
     ],
+    "python.terminal.launchArgs": [
+        "-m",
+        "IPython",
+        "--no-autoindent"
+    ],
+    // "python.dataScience.sendSelectionToInteractiveWindow": true,
     "[python]": {
         "editor.tabSize": 4,
         "editor.formatOnSave": true,
@@ -251,5 +257,6 @@
     "files.associations": {
         "*.sql": "jinja-sql",
         "**/target/**": ""  // do not highlight compiled model files
-    }
+    },
+    "extensions.ignoreRecommendations": true
 }
