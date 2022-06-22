@@ -1,6 +1,5 @@
 
 # Path to ohmyzsh installation
-#export ZSH=$ZDOTDIR/.oh-my-zsh
 export ZSH=$XDG_DATA_HOME/zsh/ohmyzsh
 
 # Path to directory with custom plugins and themes
@@ -19,15 +18,16 @@ DISABLE_AUTO_UPDATE="true"
 # Skip the verification of insecure directories
 ZSH_DISABLE_COMPFIX="true"
 
-# Color of zsh-autosuggestions
+# Change color of zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7877ab"
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
-# (zsh-syntax-highlighting must be last)
+# (zsh-syntax-highlighting must be the last plugin sourced)
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
-. $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh
+
 
 # Aliases
 
@@ -37,12 +37,12 @@ alias lll="l --tree --level=3"
 
 alias vim=nvim
 
+
 # Python
 
-function init_pyenv() {
-    eval "$(pyenv init - zsh --no-rehash)"
-    eval "$(pyenv virtualenv-init -)"
-}
+if command -v pyenv 1>/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+fi
 
 function init_conda() {
     __conda_setup="$('/usr/local/Caskroom/miniforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"

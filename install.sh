@@ -15,7 +15,9 @@ source $XDG_CONFIG_HOME/macos/set-system-preferences.sh
 # Zsh
 
 mv $HOME/.zshenv $HOME/.zshenv-old
-echo -e "ZDOTDIR=\$HOME/.config/zsh\n. \$ZDOTDIR/.zshenv" >> $HOME/.zshenv
+echo "ZDOTDIR=\$HOME/.config/zsh\n. \$ZDOTDIR/.zshenv" >> $HOME/.zshenv
+
+git clone https://github.com/ohmyzsh/ohmyzsh.git $XDG_DATA_HOME/zsh/ohmyzsh
 
 ZSH_CUSTOM=$XDG_DATA_HOME/zsh/custom
 
@@ -28,12 +30,11 @@ ln -s $XDG_CONFIG_HOME/zsh/nsgrantham.zsh-theme $ZSH_CUSTOM/themes/nsgrantham.zs
 
 # Neovim
 
-curl -fLo --create-dirs $XDG_DATA_HOME/nvim/site/autoload/plug.vim \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sh -c 'curl -fLo --create-dirs $XDG_DATA_HOME/nvim/site/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 
 # VS Code
 
-ln -s $XDG_CONFIG_HOME/vscode/settings.json $HOME/Library/ApplicationSupport/Code/User/settings.json
-ln -s $XDG_CONFIG_HOME/vscode/keybindings.json $HOME/Library/ApplicationSupport/Code/User/keybindings.json
+ln -s $XDG_CONFIG_HOME/vscode/settings.json "$HOME/Library/Application Support/Code/User/settings.json"
+ln -s $XDG_CONFIG_HOME/vscode/keybindings.json "$HOME/Library/Application Support/Code/User/keybindings.json"
 
