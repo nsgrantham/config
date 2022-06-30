@@ -27,10 +27,12 @@
     "window.restoreWindows": "none",
     "editor.minimap.enabled": false,
     "workbench.tips.enabled": false,
+    "explorer.compactFolders": false,
     "git.decorations.enabled": false,
     // "editor.quickSuggestions": false,
     "workbench.startupEditor": "none",
     "editor.lightbulb.enabled": false,
+    "editor.guides.indentation": false,
     "workbench.editor.showTabs": false, // instead navigate with Cmd+P
     "editor.selectionHighlight": false,
     "editor.renderIndentGuides": false,
@@ -43,10 +45,15 @@
     "editor.parameterHints.enabled": false,
     "workbench.activityBar.visible": false,
     "editor.renderControlCharacters": false,
+    "extensions.ignoreRecommendations": true,
     "editor.hideCursorInOverviewRuler": true,
     "workbench.panel.opensMaximized": "never",
     "workbench.panel.defaultLocation": "right",
     "editor.suggestOnTriggerCharacters": false,
+    "editor.guides.bracketPairsHorizontal": false,
+    "editor.bracketPairColorization.enabled": false,
+    "editor.guides.highlightActiveBracketPair": false,
+    "editor.guides.highlightActiveIndentation": false,
     "editor.unicodeHighlight.ambiguousCharacters": false,
 
     // No Suggestions
@@ -252,11 +259,26 @@
     // SQL
     "sql.linter.executablePath": "/Users/neal/.local/bin/sqlfluff",
     "sql.linter.run": "onSave",
+    // Use the emeraldwalk.RunOnSave extension to format SQL files
+    // on save with sqlfmt (https://github.com/tconbeer/sqlfmt)
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": ".*\\.sql",
+                "isAsync": true,
+                "cmd": "sqlfmt ${file}"
+            },
+            {
+                "match": ".*\\.sql\\.jinja",
+                "isAsync": true,
+                "cmd": "sqlfmt ${file}"
+            }
+        ]
+    },
 
     // dbt
     "files.associations": {
         "*.sql": "jinja-sql",
         "**/target/**": ""  // do not highlight compiled model files
-    },
-    "extensions.ignoreRecommendations": true
+    }
 }
