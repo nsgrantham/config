@@ -4,7 +4,6 @@
     "use_roxygen": true,
     "editor_theme": "Poolside {rsthemes}",
     "editor_keybindings": "vim",
-    "show_indent_guides": true,
     "reindent_on_paste": false,
     "posix_terminal_shell": "zsh",
     "terminal_bell_style": "none",
@@ -19,7 +18,40 @@
     "jobs_tab_visibility": "shown",
     "font_size_points": 12,
     "initial_working_directory": "~",
-    "use_spaces_for_tab": false,
     "real_time_spellchecking": false,
-    "highlight_selected_line": true
+    "panes": {
+        "quadrants": [
+            "Source",
+            "TabSet1",
+            "Console",
+            "TabSet2"
+        ],
+        "tabSet1": [
+            "Presentation"
+        ],
+        "tabSet2": [
+            "Environment",
+            "History",
+            "Files",
+            "Plots",
+            "Connections",
+            "Packages",
+            "Help",
+            "Build",
+            "VCS",
+            "Tutorial",
+            "Viewer",
+            "Presentations"
+        ],
+        "hiddenTabSet": [],
+        "console_left_on_top": false,
+        "console_right_on_top": true,
+        "additional_source_columns": 0
+    },
+    "show_function_signature_tooltips": false,
+    "code_completion": "manual",
+    "code_completion_other": "manual",
+    "handle_errors_in_user_code_only": false,
+    "num_spaces_for_tab": 1,
+    "text_rendering": "geometricPrecision"
 }

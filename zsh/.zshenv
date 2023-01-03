@@ -16,6 +16,7 @@ export NPM_CONFIG_DEVDIR=$XDG_CACHE_HOME/node-gyp
 
 # r
 export R_PROFILE_USER=$XDG_CONFIG_HOME/r/Rprofile
+export RENV_PATHS_CACHE=$XDG_DATA_HOME/renv
 
 # python
 export PYTHONSTARTUP=$XDG_CONFIG_HOME/python/pythonrc.py

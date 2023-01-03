@@ -1,0 +1,17 @@
+{
+    "activateSource": "Cmd+K Cmd+E",
+    "activateConsole": "Cmd+K Cmd+R",
+    "activateTerminal": "Cmd+K Cmd+T",
+    "goToFileFunction": "Cmd+P",
+    "newFolder": "Shift+Cmd+N",
+    "touchSourceDoc": "Cmd+N",
+    "nextTab": "Cmd+L",
+    "previousTab": "Cmd+H",
+    "activateFiles": "Cmd+K Cmd+B",
+    "maximizeConsole": "Cmd+K Cmd+N",
+    "activateEnvironment": "",
+    "renameSourceDoc": "Cmd+M",
+    "layoutZoomSource": "Ctrl+Shift+1",
+    "layoutZoomCurrentPane": "Shift+Cmd+Z",
+    "newSourceDoc": "Cmd+N"
+}
