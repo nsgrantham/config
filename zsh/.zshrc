@@ -19,7 +19,7 @@ DISABLE_AUTO_UPDATE="true"
 ZSH_DISABLE_COMPFIX="true"
 
 # Change color of zsh-autosuggestions
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7877ab"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#62619d"
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/

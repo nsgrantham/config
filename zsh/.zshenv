@@ -38,7 +38,9 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 
 # rust
-source "$HOME/.cargo/env"
+export RUSTUP_HOME=$XDG_DATA_HOME/rustup
+export CARGO_HOME=$XDG_DATA_HOME/cargo
+
 
 # ghostscript & dvisvgm for tikz from mactex
 # https://www.andrewheiss.com/blog/2021/08/27/tikz-knitr-html-svg-fun/
@@ -50,4 +52,5 @@ export LS_COLORS="di=1;35:ln=1;34:*.jpg=36:*.jpeg=36:*.png=36:*.PNG=36:*.svg=36:
 export EXA_COLORS="ur=34:uw=34:ux=34:ue=34:gr=36:gw=36:gx=36:tr=33:tw=33:tx=33:xa=30:da=30:uu=30:un=37:gu=30:gn=37:gm=33:gv=36:xx=30:hd=30"
 
 # Add pyenv and local binaries to path
-export PATH=$PYENV_ROOT/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$CARGO_HOME/bin:$PYENV_ROOT/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+

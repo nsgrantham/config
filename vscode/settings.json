@@ -35,7 +35,6 @@
     "editor.guides.indentation": false,
     "workbench.editor.showTabs": false, // instead navigate with Cmd+P
     "editor.selectionHighlight": false,
-    "editor.renderIndentGuides": false,
     // "editor.snippetSuggestions": "none",
     "editor.renderLineHighlight": "none",
     "editor.occurrencesHighlight": false,
@@ -92,17 +91,17 @@
     // Window
     // "window.titleBarStyle": "custom",
     "window.title": "",
-
-    // Color Theme & Customizations
     "workbench.colorTheme": "Poolside", // https://marketplace.visualstudio.com/items?itemName=nsgrantham.poolside
     "workbench.colorCustomizations": {
         // Adjust color to blend in with Editor and Terminal
-        // "titleBar.activeBackground": "#353454",
-        // "titleBar.inactiveBackground": "#353454",
-        "panelTitle.activeBorder": "#353454",
-        "scrollbar.shadow": "#353454",
-        "panel.border": "#474670",
-        "editorGroup.border": "#474670",
+        //"titleBar.activeBackground": "#2D2D48",
+        //"titleBar.inactiveBackground": "#2D2D48",
+        "panelTitle.activeBorder": "#0000",
+        //"scrollbar.shadow": "#353454",
+        //"panel.border": "#474670",
+        //"editorGroup.border": "#474670",
+        "editorGroupHeader.noTabsBackground": "#0000",//#2d2d48",
+        //"editorGroupHeader.tabsBackground": "#2d2d48",
         // Make all marks in the gutter and scrollbar area invisible
         // https://stackoverflow.com/a/51684408
         // (Uses #RGBA shorthand rather than #RRGGBBAA)
@@ -129,14 +128,14 @@
     "window.titleBarStyle": "native",
     "customizeUI.titleBar": "frameless",
     "customizeUI.listRowHeight": 20, // line height in sidebar (VSC default is 22)
-    "customizeUI.font.regular": "Inter",
-    "customizeUI.font.monospace": "InputMono-ExtraLight",
+    //"customizeUI.font.regular": "Inter",
+    //"customizeUI.font.monospace": "InputMono-Regular",
     "customizeUI.stylesheet": {
         //".editor .title": "background: transparent !important;",
         // ".editor .title .label-container": "visibility: hidden;",
         // Change colors of file name and path in Editor title
-        ".editor .title .label-container .label-name": "color: #F2EDED;",
-        ".editor .title .label-container .label-description": "color: #7877ab;",
+        //".editor .title .label-container .label-name": "color: #f2f2f7;",
+        ".editor .title .label-container .label-description": "color: #ffffff80;",
         // Hide top-right buttons in Editor
         ".editor .title .actions-container .action-item a": "visibility: hidden;",
         // Hide top-right buttons in Terminal
@@ -280,5 +279,8 @@
     "files.associations": {
         "*.sql": "jinja-sql",
         "**/target/**": ""  // do not highlight compiled model files
-    }
+    },
+
+    // Color Highlight Extension
+    "color-highlight.markRuler": false
 }
