@@ -28,10 +28,13 @@ export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc.py"
 # pyenv
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 export PYENV_VIRTUALENV_CACHE_PATH="$XDG_CACHE_HOME/pyenv"
-command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+export PATH="$PYENV_ROOT/bin:$PATH"
 
 # poetry
-export POETRY_HOME="$XDG_DATA_HOME/poetry"
+export POETRY_HOME="$XDG_DATA_HOME/pypoetry"
+export POETRY_CACHE_DIR="$XDG_CACHE_HOME/pypoetry"
+export POETRY_CONFIG_DIR="$XDG_CONFIG_HOME/pypoetry"
+export PATH="$POETRY_HOME/bin:$PATH"
 
 # sqlite
 export SQLITE_HISTORY="$XDG_CACHE_HOME/sqlite/history"
@@ -49,7 +52,7 @@ export HOMEBREW_NO_INSTALL_CLEANUP=1
 # rust
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
-command -v cargo >/dev/null || export PATH="$CARGO_HOME/bin:$PATH"
+export PATH="$CARGO_HOME/bin:$PATH"
 
 # ghostscript & dvisvgm for tikz from mactex
 # https://www.andrewheiss.com/blog/2021/08/27/tikz-knitr-html-svg-fun/
