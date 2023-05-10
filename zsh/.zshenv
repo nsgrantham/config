@@ -4,6 +4,9 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
+# Add local binaries to path
+export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
+
 # zsh
 export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 export ZSH_COMPDUMP="$ZSH_CACHE_DIR/zcompdump-${HOST/.*/}-$ZSH_VERSION"
@@ -62,7 +65,3 @@ export LIBGS="/usr/local/Cellar/ghostscript/9.55.0/lib/libgs.dylib.9.55"
 # https://the.exa.website/docs/colour-themes
 export LS_COLORS="di=1;35:ln=1;34:*.jpg=36:*.jpeg=36:*.png=36:*.PNG=36:*.svg=36:*.pdf=33:*.zip=35"
 export EXA_COLORS="ur=34:uw=34:ux=34:ue=34:gr=36:gw=36:gx=36:tr=33:tw=33:tx=33:xa=30:da=30:uu=30:un=37:gu=30:gn=37:gm=33:gv=36:xx=30:hd=30"
-
-# Add other local binaries to path
-export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
-
