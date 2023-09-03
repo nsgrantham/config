@@ -10,12 +10,19 @@ export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
 # zsh
 export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
 export ZSH_COMPDUMP="$ZSH_CACHE_DIR/zcompdump-${HOST/.*/}-$ZSH_VERSION"
-export HISTFILE="$ZSH_CACHE_DIR/history"
 export SHELL_SESSIONS_DISABLE=1
+export HISTFILE="$ZSH_CACHE_DIR/history"
+export SAVEHIST=10000  # how many commands zsh saves to history file
+export HISTSIZE=10000  # how many commands zsh loads into memory
+setopt HIST_IGNORE_ALL_DUPS  # don't save duplicates
+setopt HIST_FIND_NO_DUPS     # don't show duplicates in search
 
 # ohmyzsh
 export ZSH="$XDG_DATA_HOME/zsh/ohmyzsh"
 export ZSH_CUSTOM="$XDG_DATA_HOME/zsh/custom"
+
+# tmux
+export TMUX_PLUGIN_MANAGER_PATH="$XDG_DATA_HOME/tmux/plugins"
 
 # npm
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"

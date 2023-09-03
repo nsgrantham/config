@@ -1,9 +1,13 @@
+-- Set global variables
+
+vim.g.mapleader = " "
+
+
 -- Set options
 
 vim.opt.tabstop = 2               -- Number of space characters per tab
 vim.opt.wrap = false              -- No line wrapping
 vim.opt.number = true             -- Add line numbers
-vim.opt.laststatus = 3            -- Make status line global rather than per window
 vim.opt.shiftwidth = 2            -- Number of characters to indent a line
 vim.opt.showmode = false          -- Let the lualine plugin handle modes
 vim.opt.swapfile = false          -- Prevent neovim from creating various files
@@ -23,6 +27,25 @@ vim.opt.clipboard = "unnamedplus" -- Use the system clipboard
 
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+
+-- Diagnostics
+
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+  severity_sort = true,
+  float = {
+    border = 'rounded',
+    source = 'always',
+  },
+})
+
+-- You will likely want to reduce updatetime which affects CursorHold
+-- note: this setting is global and should be set only once
+vim.o.updatetime = 100
+vim.cmd [[ autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focus = false }) ]]
+
 
 
 -- Bootstrap lazy.nvim
@@ -58,6 +81,62 @@ require("lazy").setup({
     end
   },
 
+  {
+    "uloco/bluloco.nvim"
+  },
+
+  { "rebelot/kanagawa.nvim" },
+  { "rose-pine/neovim" },
+  { "catppuccin/nvim" },
+
+  -- Language Server Protocol (LSP)
+  {
+    "VonHeikemen/lsp-zero.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    cmd = "Mason",
+    branch = "v2.x",
+    dependencies = {
+      -- LSP Support
+      {
+        "neovim/nvim-lspconfig",
+      },
+      {
+        "williamboman/mason.nvim",
+        build = function()
+          pcall(vim.cmd, "MasonUpdate")
+        end
+      },
+      { "williamboman/mason-lspconfig.nvim" },
+
+      -- Autocompletion
+      { "hrsh7th/nvim-cmp" },
+      { "hrsh7th/cmp-nvim-lsp" },
+      { "L3MON4D3/LuaSnip" },
+    },
+    config = function()
+      local lsp = require('lsp-zero').preset({})
+
+      lsp.on_attach(function(client, bufnr)
+        lsp.default_keymaps({ buffer = bufnr })
+      end)
+
+      lsp.set_sign_icons({
+        error = "",--"⏺",
+        warn  = "",--"▲",
+        hint  = "",--"■", -- 
+        info  = "",--"⏺"  -- U+23FA
+      })
+      
+      vim.cmd [[ sign define DiagnosticSignError texthl= numhl=DiagnosticSignError ]]
+      vim.cmd [[ sign define DiagnosticSignWarn texthl= numhl=DiagnosticSignWarn ]]
+      vim.cmd [[ sign define DiagnosticSignHint texthl= numhl=DiagnosticSignHint ]]
+      vim.cmd [[ sign define DiagnosticSignInfo texthl= numhl=DiagnosticSignInfo ]]
+      vim.cmd [[ sign define DiagnosticSignOk texthl= numhl=DiagnosticSignOk ]]
+
+      lsp.setup()
+    end
+  },
+
   -- File tree
   {
     "nvim-tree/nvim-tree.lua",
@@ -87,9 +166,22 @@ require("lazy").setup({
     config = function()
       require("lualine").setup({
         options = {
+          globalstatus = true,
           icons_enabled = false,
           component_separators = "",
-          section_separators = ""
+          section_separators = "",
+          always_divide_middle = true,
+          theme = 'poolside'
+        },
+        sections = {
+          -- left
+          lualine_a = { "mode" },
+          lualine_b = { "branch" },
+          lualine_c = { "filename" },
+          -- right
+          lualine_x = { "filetype" },
+          lualine_y = { "location" },
+          lualine_z = { "progress" }
         }
       })
     end
@@ -127,11 +219,25 @@ require("lazy").setup({
     end
   },
 
+  -- Pane switching with tmux
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false
+  },
+
   -- Fuzzy finder
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.2",
-    dependencies = { "nvim-lua/plenary.nvim" }
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+      local telescope = require('telescope.builtin')
+      vim.keymap.set('n', '<leader>ff', telescope.find_files, {})
+      vim.keymap.set('n', '<leader>fg', telescope.live_grep, {})
+      vim.keymap.set('n', '<leader>fb', telescope.buffers, {})
+      vim.keymap.set('n', '<leader>fp', telescope.oldfiles, {})
+      vim.keymap.set('n', '<leader>fh', telescope.help_tags, {})
+    end
   },
 
   -- Treesitter
