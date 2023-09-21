@@ -1,9 +1,11 @@
--- Set global variables
+-- Global variables
 
-vim.g.mapleader = " "
+vim.g.mapleader = " "         -- Make Spacebar the Vim leader key
+vim.g.loaded_netrw = 1        -- Disable netrw to avoid conflict with nvim-tree plugin
+vim.g.loaded_netrwPlugin = 1  -- Disable netrw to avoid conflict with nvim-tree plugin
 
 
--- Set options
+-- Options
 
 vim.opt.tabstop = 2               -- Number of space characters per tab
 vim.opt.wrap = false              -- No line wrapping
@@ -13,7 +15,7 @@ vim.opt.showmode = false          -- Let the lualine plugin handle modes
 vim.opt.swapfile = false          -- Prevent neovim from creating various files
 vim.opt.hlsearch = false          -- Do not highlight results of previous search
 vim.opt.expandtab = true          -- Transform tabs into spaces
-vim.opt.smartcase = true          -- Match case when uppercase letters are used...
+vim.opt.smartcase = true          -- Match case when uppercase letters are used
 vim.opt.ignorecase = true         -- Otherwise, ignore case when searching
 vim.opt.splitbelow = true         -- Split windows below when splitting horizontally
 vim.opt.splitright = true         -- Split windows right when splitting vertically
@@ -21,12 +23,6 @@ vim.opt.signcolumn = "yes"        -- Keep space in gutter for diagnostic flags
 vim.opt.termguicolors = true      -- Allow more colors for colorscheme
 vim.opt.fileencoding = "utf-8"    -- Force utf-8 file encoding
 vim.opt.clipboard = "unnamedplus" -- Use the system clipboard
-
-
--- Disable netrw in favor of nvim-tree plugin
-
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
 
 
 -- Diagnostics
@@ -46,6 +42,9 @@ vim.diagnostic.config({
 vim.o.updatetime = 100
 vim.cmd [[ autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, { focus = false }) ]]
 
+
+-- Keyboard shortcuts
+vim.keymap.set('n', '<leader><tab>', ':b#<cr>')  -- Switch to last open buffer/tab
 
 
 -- Bootstrap lazy.nvim
@@ -70,10 +69,10 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   -- Theme
   {
-    "poolside.nvim", 
-    dir = "~/Developer/poolside.nvim", 
-    dev = true, 
-    lazy = false, 
+    "poolside.nvim",
+    dir = "~/Developer/poolside.nvim",
+    dev = true,
+    lazy = false,
     dependencies = { "rktjmp/lush.nvim" },
     config = function()
       vim.cmd.colorscheme("poolside")
@@ -81,10 +80,7 @@ require("lazy").setup({
     end
   },
 
-  {
-    "uloco/bluloco.nvim"
-  },
-
+  { "uloco/bluloco.nvim" },
   { "rebelot/kanagawa.nvim" },
   { "rose-pine/neovim" },
   { "catppuccin/nvim" },
@@ -97,15 +93,8 @@ require("lazy").setup({
     branch = "v2.x",
     dependencies = {
       -- LSP Support
-      {
-        "neovim/nvim-lspconfig",
-      },
-      {
-        "williamboman/mason.nvim",
-        build = function()
-          pcall(vim.cmd, "MasonUpdate")
-        end
-      },
+      { "neovim/nvim-lspconfig" },
+      { "williamboman/mason.nvim" },
       { "williamboman/mason-lspconfig.nvim" },
 
       -- Autocompletion
@@ -121,12 +110,12 @@ require("lazy").setup({
       end)
 
       lsp.set_sign_icons({
-        error = "",--"⏺",
-        warn  = "",--"▲",
-        hint  = "",--"■", -- 
-        info  = "",--"⏺"  -- U+23FA
+        error = "", --"⏺",
+        warn  = "", --"▲",
+        hint  = "", --"■",
+        info  = "", --"⏺"
       })
-      
+
       vim.cmd [[ sign define DiagnosticSignError texthl= numhl=DiagnosticSignError ]]
       vim.cmd [[ sign define DiagnosticSignWarn texthl= numhl=DiagnosticSignWarn ]]
       vim.cmd [[ sign define DiagnosticSignHint texthl= numhl=DiagnosticSignHint ]]
@@ -140,21 +129,45 @@ require("lazy").setup({
   -- File tree
   {
     "nvim-tree/nvim-tree.lua",
+    version = "*",
+    lazy = false,
+    dependencies = {
+      "nvim-tree/nvim-web-devicons",
+    },
     keys = {
       { "<leader>e", ":NvimTreeToggle<CR>", desc = "Toggle file tree" },
     },
     config = function()
       require("nvim-tree").setup({
+        disable_netrw = true,
+        view = {
+          side = "right",
+          width = 42
+        },
+        git = {
+          show_on_open_dirs = false
+        },
+        modified = {
+          enable = true,
+          show_on_open_dirs = false
+        },
         renderer = {
+          highlight_git = true,
+          root_folder_label = ":~:s?$?",  -- modified from default ":~:s?$?/..?"
+          indent_markers = {
+            enable = true
+          },
           icons = {
+            webdev_colors = false,
+            modified_placement = "signcolumn",
             show = {
-              file = false,
-              folder = false,
-              folder_arrow = false,
-              git = false,
-              modified = true
+              git = false
             }
           }
+        },
+        filters = {
+          git_ignored = false,
+          custom = { "^\\.git" }
         }
       })
     end
@@ -163,15 +176,14 @@ require("lazy").setup({
   -- Status line
   {
     "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("lualine").setup({
         options = {
           globalstatus = true,
-          icons_enabled = false,
           component_separators = "",
           section_separators = "",
-          always_divide_middle = true,
-          theme = 'poolside'
+          theme = "poolside"
         },
         sections = {
           -- left
@@ -179,37 +191,18 @@ require("lazy").setup({
           lualine_b = { "branch" },
           lualine_c = { "filename" },
           -- right
-          lualine_x = { "filetype" },
+          lualine_x = {
+            {
+              "filetype",
+              colored = false
+            }
+          },
           lualine_y = { "location" },
           lualine_z = { "progress" }
         }
       })
     end
   },
-
-  -- Tabs
-  --{
-  --  "akinsho/bufferline.nvim",
-  --  config = function()
-  --    require("bufferline").setup({
-  --      options = {
-  --        mode = "buffers",
-  --        offsets = {
-  --          { filetype = "NvimTree" }
-  --        },
-  --      },
-  --      highlights = {
-  --        buffer_selected = {
-  --          italic = false
-  --        },
-  --        indicator_selected = {
-  --          fg = { attribute = "fg", highlight = "Function" },
-  --          italic = false
-  --        }
-  --      }
-  --    })
-  --  end
-  --},
 
   -- Gitsigns
   {
@@ -229,8 +222,18 @@ require("lazy").setup({
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.2",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-tree/nvim-web-devicons" }
+    },
     config = function()
+      require("telescope").setup({
+        defaults = {
+          selection_caret = "  ",
+          color_devicons = false
+        }
+      })
+
       local telescope = require('telescope.builtin')
       vim.keymap.set('n', '<leader>ff', telescope.find_files, {})
       vim.keymap.set('n', '<leader>fg', telescope.live_grep, {})
@@ -256,6 +259,10 @@ require("lazy").setup({
   -- dbt
   {
     "PedramNavid/dbtpal",
+    dependencies = {
+      { "nvim-lua/plenary.nvim" },
+      { "nvim-telescope/telescope.nvim" }
+    },
     init = function()
       local dbt = require("dbtpal")
       dbt.setup({
@@ -272,11 +279,12 @@ require("lazy").setup({
       vim.keymap.set("n", "<leader>dm", require("dbtpal.telescope").dbt_picker)
 
       require("telescope").load_extension("dbtpal")
-    end,
-    dependencies = {
-      { "nvim-lua/plenary.nvim" },
-      { "nvim-telescope/telescope.nvim" }
-    }
+    end
+  },
+
+  {
+    "ryanoasis/vim-devicons",
+    lazy = false
   }
 })
 

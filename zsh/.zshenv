@@ -28,6 +28,9 @@ export TMUX_PLUGIN_MANAGER_PATH="$XDG_DATA_HOME/tmux/plugins"
 export NPM_CONFIG_CACHE="$XDG_CACHE_HOME/npm"
 export NPM_CONFIG_DEVDIR="$XDG_CACHE_HOME/node-gyp"
 
+# node
+export NODE_REPL_HISTORY="$XDG_CACHE_DIR/node/history"
+
 # r
 export R_PROFILE_USER="$XDG_CONFIG_HOME/r/Rprofile"
 export RENV_PATHS_CACHE="$XDG_DATA_HOME/renv"
@@ -70,5 +73,5 @@ export LIBGS="/usr/local/Cellar/ghostscript/9.55.0/lib/libgs.dylib.9.55"
 
 # exa
 # https://the.exa.website/docs/colour-themes
-export LS_COLORS="di=1;35:ln=1;34:*.jpg=36:*.jpeg=36:*.png=36:*.PNG=36:*.svg=36:*.pdf=33:*.zip=35"
-export EXA_COLORS="ur=34:uw=34:ux=34:ue=34:gr=36:gw=36:gx=36:tr=33:tw=33:tx=33:xa=30:da=30:uu=30:un=37:gu=30:gn=37:gm=33:gv=36:xx=30:hd=30"
+export LS_COLORS="di=1;34:ln=1;36:*.jpg=36:*.jpeg=36:*.png=36:*.PNG=36:*.svg=36:*.pdf=33:*.zip=35"
+export EXA_COLORS="ur=30:uw=30:ux=30:ue=30:gr=30:gw=30:gx=30:tr=30:tw=30:tx=30:su=30:sf=30:xa=30:da=30:uu=30:un=1;30:gu=30:gn=1;30:ga=36:gm=33:gd=31:gv=36:gt=35:xx=30:hd=30"
