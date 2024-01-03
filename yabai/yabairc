@@ -5,11 +5,11 @@ yabai -m config layout bsp
 yabai -m config window_placement second_child
 
 # Window padding
-yabai -m config top_padding    16
-yabai -m config bottom_padding 16
-yabai -m config left_padding   16
-yabai -m config right_padding  16
-yabai -m config window_gap     16
+yabai -m config top_padding    30
+yabai -m config bottom_padding 30
+yabai -m config left_padding   30
+yabai -m config right_padding  30
+yabai -m config window_gap     30
 
 # Enable mouse support
 yabai -m config mouse_follows_focus on

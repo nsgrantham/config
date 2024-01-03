@@ -5,7 +5,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 
 # Add local binaries to path
-export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
+#export PATH="$HOME/.local/bin:/usr/local/bin:$PATH"
 
 # zsh
 export ZSH_CACHE_DIR="$XDG_CACHE_HOME/zsh"
@@ -31,6 +31,9 @@ export NPM_CONFIG_DEVDIR="$XDG_CACHE_HOME/node-gyp"
 # node
 export NODE_REPL_HISTORY="$XDG_CACHE_DIR/node/history"
 
+# psql
+export PSQL_HISTORY="$XDG_CACHE_DIR/psql/history"
+
 # r
 export R_PROFILE_USER="$XDG_CONFIG_HOME/r/Rprofile"
 export RENV_PATHS_CACHE="$XDG_DATA_HOME/renv"
@@ -41,13 +44,13 @@ export PYTHONSTARTUP="$XDG_CONFIG_HOME/python/pythonrc.py"
 # pyenv
 export PYENV_ROOT="$XDG_DATA_HOME/pyenv"
 export PYENV_VIRTUALENV_CACHE_PATH="$XDG_CACHE_HOME/pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
+#export PATH="$PYENV_ROOT/bin:$PATH"
 
 # poetry
 export POETRY_HOME="$XDG_DATA_HOME/pypoetry"
 export POETRY_CACHE_DIR="$XDG_CACHE_HOME/pypoetry"
 export POETRY_CONFIG_DIR="$XDG_CONFIG_HOME/pypoetry"
-export PATH="$POETRY_HOME/bin:$PATH"
+#export PATH="$POETRY_HOME/bin:$PATH"
 
 # sqlite
 export SQLITE_HISTORY="$XDG_CACHE_HOME/sqlite/history"
@@ -60,12 +63,14 @@ export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME/bundle"
 # brew
 export HOMEBREW_NO_ENV_HINTS=1
 export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_AUTO_UPGRADE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
+#export PATH="/opt/homebrew/bin:$PATH"
 
 # rust
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
-export PATH="$CARGO_HOME/bin:$PATH"
+#export PATH="$CARGO_HOME/bin:$PATH"
 
 # ghostscript & dvisvgm for tikz from mactex
 # https://www.andrewheiss.com/blog/2021/08/27/tikz-knitr-html-svg-fun/

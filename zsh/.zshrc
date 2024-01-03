@@ -11,7 +11,8 @@ DISABLE_AUTO_UPDATE="true"
 ZSH_DISABLE_COMPFIX="true"
 
 # Change color of zsh-autosuggestions
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#62619d"
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#62619d"
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#5959a6"
 
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -22,13 +23,7 @@ source $ZSH/oh-my-zsh.sh
 
 # Aliases
 
-alias l="exa --all --long --git --color-scale --time-style=long-iso"
-alias ll="l --tree --level=2"
-alias lll="l --tree --level=3"
+alias l="exa --all --long --git --color-scale --no-user --no-time"
+alias ll="exa --all --long --git --color-scale --time-style=long-iso"
 
 alias vim=nvim
-
-# Python
-
-#eval "$(pyenv init -)"
-#eval "$(pyenv virtualenv-init -)"

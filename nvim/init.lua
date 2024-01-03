@@ -1,8 +1,11 @@
 -- Global variables
 
 vim.g.mapleader = " "         -- Make Spacebar the Vim leader key
+
 vim.g.loaded_netrw = 1        -- Disable netrw to avoid conflict with nvim-tree plugin
 vim.g.loaded_netrwPlugin = 1  -- Disable netrw to avoid conflict with nvim-tree plugin
+
+vim.g.omni_sql_no_default_maps = 1  -- Turn off "=sqlcomplete#..." messages: https://stackoverflow.com/questions/24931088/disable-omnicomplete-or-ftplugin-or-something-in-vim
 
 
 -- Options
@@ -11,18 +14,28 @@ vim.opt.tabstop = 2               -- Number of space characters per tab
 vim.opt.wrap = false              -- No line wrapping
 vim.opt.number = true             -- Add line numbers
 vim.opt.shiftwidth = 2            -- Number of characters to indent a line
+vim.opt.showcmd = false           -- Don't show commands like ^D/^U when navigating file
 vim.opt.showmode = false          -- Let the lualine plugin handle modes
 vim.opt.swapfile = false          -- Prevent neovim from creating various files
 vim.opt.hlsearch = false          -- Do not highlight results of previous search
 vim.opt.expandtab = true          -- Transform tabs into spaces
 vim.opt.smartcase = true          -- Match case when uppercase letters are used
 vim.opt.ignorecase = true         -- Otherwise, ignore case when searching
-vim.opt.splitbelow = true         -- Split windows below when splitting horizontally
+vim.opt.splitbelow = true         -- Split windows below swhen splitting horizontally
 vim.opt.splitright = true         -- Split windows right when splitting vertically
-vim.opt.signcolumn = "yes"        -- Keep space in gutter for diagnostic flags
+--vim.opt.signcolumn = "yes"        -- Keep space in gutter for diagnostic flags
 vim.opt.termguicolors = true      -- Allow more colors for colorscheme
 vim.opt.fileencoding = "utf-8"    -- Force utf-8 file encoding
 vim.opt.clipboard = "unnamedplus" -- Use the system clipboard
+
+-- https://www.reddit.com/r/neovim/comments/14yjoyh/how_to_get_gitsigns_or_equivalent_to_the_right_of/
+--vim.opt.statuscolumn = "%=%{v:lnum} %s"  -- Place gutter to right of line numbers
+
+-- Set the following to hide almost everything
+vim.opt.signcolumn = "no"
+vim.opt.number = false
+vim.opt.ruler = false
+vim.opt.laststatus = 0
 
 
 -- Diagnostics
@@ -44,6 +57,7 @@ vim.cmd [[ autocmd! CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, 
 
 
 -- Keyboard shortcuts
+
 vim.keymap.set('n', '<leader><tab>', ':b#<cr>')  -- Switch to last open buffer/tab
 
 
@@ -71,7 +85,7 @@ require("lazy").setup({
   {
     "poolside.nvim",
     dir = "~/Developer/poolside.nvim",
-    dev = true,
+    --dev = true,
     lazy = false,
     dependencies = { "rktjmp/lush.nvim" },
     config = function()
@@ -166,8 +180,8 @@ require("lazy").setup({
           }
         },
         filters = {
-          git_ignored = false,
-          custom = { "^\\.git" }
+          git_ignored = false--,
+          --custom = { "^\\.git" }
         }
       })
     end
@@ -181,8 +195,6 @@ require("lazy").setup({
       require("lualine").setup({
         options = {
           globalstatus = true,
-          component_separators = "",
-          section_separators = "",
           theme = "poolside"
         },
         sections = {
@@ -197,8 +209,8 @@ require("lazy").setup({
               colored = false
             }
           },
-          lualine_y = { "location" },
-          lualine_z = { "progress" }
+          lualine_y = { "progress" },
+          lualine_z = { "location" }
         }
       })
     end
@@ -216,6 +228,34 @@ require("lazy").setup({
   {
     "christoomey/vim-tmux-navigator",
     lazy = false
+  },
+
+  -- Send code from editor to terminal or REPL
+  {
+    "jpalardy/vim-slime",
+    init = function()
+      vim.g.slime_target = "tmux"
+      vim.g.slime_bracketed_paste = 1
+      vim.g.slime_dont_ask_default = 1
+      vim.g.slime_default_config = { socket_name = "default", target_pane = ".2" }
+    end
+  },
+
+  -- Quarto
+  {
+    "quarto-dev/quarto-nvim",
+    dependencies = {
+      { "jpalardy/vim-slime" },
+      { "jmbuhr/otter.nvim" },
+    },
+    config = function()
+      require("quarto").setup({
+        codeRunner = {
+          enabled = true,
+          default_method = "slime"
+        }
+      })
+    end
   },
 
   -- Fuzzy finder
@@ -249,11 +289,41 @@ require("lazy").setup({
     config = function()
       require("nvim-treesitter.configs").setup({
         auto_install = true,
-        indent = { enable = true },
-        highlight = { enable = true },
-        context_commentstring = { enable = true }
+        indent = {
+          enable = true
+        },
+        highlight = {
+          enable = true
+        },
+        context_commentstring = {
+          enable = true
+        }
       })
     end
+  },
+
+  -- Noice
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      {
+        "rcarriga/nvim-notify",
+        opts = {
+          timeout = 2000,
+          render = "minimal",
+          stages = "fade"
+        }
+      },
+    }
   },
 
   -- dbt
