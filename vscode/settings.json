@@ -18,11 +18,12 @@
     // Silence the Noise
     "editor.folding": false,
     //"editor.glyphMargin": false,
-    "workbench.iconTheme": null,
-    "editor.lineNumbers": "off",
+    "workbench.iconTheme": "file-icons-colourless",
+    //"editor.lineNumbers": "off",
+    "editor.lineNumbers": "relative",
     "breadcrumbs.enabled": false,
     "scm.diffDecorations": "none",
-    "editor.hover.enabled": false,
+    //"editor.hover.enabled": false,
     "editor.matchBrackets": "never",
     "window.restoreWindows": "none",
     "editor.minimap.enabled": false,
@@ -41,7 +42,7 @@
     "workbench.statusBar.visible": false,
     "workbench.sideBar.location": "right",
     "problems.decorations.enabled": false,
-    "editor.parameterHints.enabled": false,
+    // "editor.parameterHints.enabled": false,
     "workbench.activityBar.visible": false,
     "editor.renderControlCharacters": false,
     "extensions.ignoreRecommendations": true,
@@ -56,52 +57,45 @@
     "editor.unicodeHighlight.ambiguousCharacters": false,
 
     // No Suggestions
-    "editor.suggest.showEnums": false,
-    "editor.suggest.showFiles": false,
-    "editor.suggest.showIcons": false,
-    "editor.suggest.showWords": false,
-    //"editor.suggest.showUnits": false,  // must be enabled for greek letters completions in Julia
-    "editor.suggest.showUsers": false,
-    "editor.suggest.showColors": false,
-    "editor.suggest.showEvents": false,
-    "editor.suggest.showFields": false,
-    "editor.suggest.showIssues": false,
-    "editor.suggest.showValues": false,
-    "editor.suggest.showClasses": false,
-    "editor.suggest.showFolders": false,
-    "editor.suggest.showMethods": false,
-    "editor.suggest.showModules": false,
-    "editor.suggest.showStructs": false,
-    "editor.suggest.showKeywords": false,
-    "editor.suggest.showSnippets": false,
-    "editor.suggest.showConstants": false,
-    "editor.suggest.showFunctions": false,
-    "editor.suggest.showOperators": false,
-    "editor.suggest.showVariables": false,
-    "editor.suggest.showDeprecated": false,
-    "editor.suggest.showInterfaces": false,
-    "editor.suggest.showProperties": false,
-    "editor.suggest.showReferences": false,
-    "editor.suggest.showEnumMembers": false,
-    "editor.suggest.showConstructors": false,
-    "editor.suggest.showCustomcolors": false,
-    "editor.suggest.showInlineDetails": false,
-    "editor.suggest.showTypeParameters": false,
+    //"editor.suggest.showEnums": false,
+    //"editor.suggest.showFiles": false,
+    //"editor.suggest.showIcons": false,
+    //"editor.suggest.showWords": false,
+    ////"editor.suggest.showUnits": false,  // must be enabled for greek letters completions in Julia
+    //"editor.suggest.showUsers": false,
+    //"editor.suggest.showColors": false,
+    //"editor.suggest.showEvents": false,
+    //"editor.suggest.showFields": false,
+    //"editor.suggest.showIssues": false,
+    //"editor.suggest.showValues": false,
+    //"editor.suggest.showClasses": false,
+    //"editor.suggest.showFolders": false,
+    //"editor.suggest.showMethods": false,
+    //"editor.suggest.showModules": false,
+    //"editor.suggest.showStructs": false,
+    //"editor.suggest.showKeywords": false,
+    //"editor.suggest.showSnippets": false,
+    //"editor.suggest.showConstants": false,
+    //"editor.suggest.showFunctions": false,
+    //"editor.suggest.showOperators": false,
+    //"editor.suggest.showVariables": false,
+    //"editor.suggest.showDeprecated": false,
+    //"editor.suggest.showInterfaces": false,
+    //"editor.suggest.showProperties": false,
+    //"editor.suggest.showReferences": false,
+    //"editor.suggest.showEnumMembers": false,
+    //"editor.suggest.showConstructors": false,
+    //"editor.suggest.showCustomcolors": false,
+    //"editor.suggest.showInlineDetails": false,
+    //"editor.suggest.showTypeParameters": false,
 
     // Window
     // "window.titleBarStyle": "custom",
-    "window.title": "",
-    "workbench.colorTheme": "Poolside", // https://marketplace.visualstudio.com/items?itemName=nsgrantham.poolside
+    "window.title": "", // https://marketplace.visualstudio.com/items?itemName=nsgrantham.poolside
     "workbench.colorCustomizations": {
         // Adjust color to blend in with Editor and Terminal
-        //"titleBar.activeBackground": "#2D2D48",
-        //"titleBar.inactiveBackground": "#2D2D48",
         "panelTitle.activeBorder": "#0000",
-        //"scrollbar.shadow": "#353454",
-        //"panel.border": "#474670",
-        //"editorGroup.border": "#474670",
-        "editorGroupHeader.noTabsBackground": "#0000",//#2d2d48",
-        //"editorGroupHeader.tabsBackground": "#2d2d48",
+        "editorGroupHeader.noTabsBackground": "#0000",
         // Make all marks in the gutter and scrollbar area invisible
         // https://stackoverflow.com/a/51684408
         // (Uses #RGBA shorthand rather than #RRGGBBAA)
@@ -127,15 +121,15 @@
     // https://marketplace.visualstudio.com/items?itemName=iocave.customize-ui
     "window.titleBarStyle": "native",
     "customizeUI.titleBar": "frameless",
-    "customizeUI.listRowHeight": 20, // line height in sidebar (VSC default is 22)
+    "customizeUI.listRowHeight": 18, // line height in sidebar (VSC default is 22)
     "customizeUI.font.regular": "Inter",
-    //"customizeUI.font.monospace": "InputMono-Regular",
+    "customizeUI.font.monospace": "InputMono-Regular",
     "customizeUI.stylesheet": {
         //".editor .title": "background: transparent !important;",
         // ".editor .title .label-container": "visibility: hidden;",
         // Change colors of file name and path in Editor title
         //".editor .title .label-container .label-name": "color: #f2f2f7;",
-        ".editor .title .label-container .label-description": "color: #9291bb;",
+        ".editor .title .label-container .label-description": "color: #5959ad;",
         // Hide top-right buttons in Editor
         ".editor .title .actions-container .action-item a": "visibility: hidden;",
         // Hide top-right buttons in Terminal
@@ -173,7 +167,7 @@
     "editor.gotoLocation.multipleTypeDefinitions": "goto",
 
     // Typography
-    "editor.fontFamily": "InputMono-ExtraLight",  // available at https://input.djr.com/
+    "editor.fontFamily": "InputMono-Light",  // available at https://input.djr.com/
     "editor.fontSize": 12,
     "editor.lineHeight": 18,
     "editor.suggestFontSize": 12,
@@ -202,12 +196,20 @@
     // Formatting
     "editor.defaultFormatter": null,
 
-    // JavaScript
-    "[javascript]": {
+    // JavaScript, TypeScript
+    "[javascript][javascriptreact][typescript][typescriptreact]": {
         "editor.tabSize": 2,
         "editor.insertSpaces": true,
         "editor.formatOnSave": true,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.quickSuggestions": {
+            "strings": "on"
+        },
+    },
+
+    // Svelte
+    "[svelte]": {
+        "editor.defaultFormatter": "svelte.svelte-vscode"
     },
 
     // Python
@@ -288,5 +290,7 @@
     },
 
     // Color Highlight Extension
-    "color-highlight.markRuler": false
+    "color-highlight.markRuler": false,
+    "svelte.enable-ts-plugin": true,
+    "workbench.colorTheme": "Poolside",
 }

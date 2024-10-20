@@ -24,7 +24,7 @@
     },
     {
         "key": "cmd+k cmd+x",
-        "command": "workbench.extensions.action.showInstalledExtensions"
+        "command": "workbench.view.extensions"
     },
 
     // Sidebar

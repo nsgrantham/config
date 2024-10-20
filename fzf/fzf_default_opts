@@ -1,0 +1,13 @@
+--bind 'ctrl-/:toggle-preview'
+--bind 'ctrl-u:preview-page-up'
+--bind 'ctrl-d:preview-page-down'
+--preview-window 'right:60%'
+--preview 'bat {} || cat {} || tree -C {}'
+--layout reverse
+--border none
+--prompt '∷ '
+--pointer ►
+--marker ⇒
+--color prompt:blue,border:black,info:black
+--color pointer:magenta,fg+:bright-white,bg+:bright-black,hl:green
+--color gutter:-1,fg:white
