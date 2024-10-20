@@ -1,0 +1,78 @@
+[colors]
+draw_bold_text_with_bright_colors = true
+
+[colors.bright]
+black = "#39316C"
+blue = "#979FF7"
+cyan = "#92EFF7"
+green = "#CBF78D"
+magenta = "#EF97F7"
+red = "#F797AF"
+white = "#F0F0FC"
+yellow = "#F7CD92"
+
+[colors.cursor]
+background = "#FFD1C2"
+foreground = "#161424"
+
+[colors.dim]
+black = "#5C4FB0"
+blue = "#979FF7"
+cyan = "#92EFF7"
+green = "#CBF78D"
+magenta = "#EF97F7"
+red = "#F797AF"
+white = "#DBDBF8"
+yellow = "#F7CD92"
+
+[colors.normal]
+black = "#5C4FB0"
+blue = "#979FF7"
+cyan = "#92EFF7"
+green = "#CBF78D"
+magenta = "#EF97F7"
+red = "#F797AF"
+white = "#DBDBF8"
+yellow = "#F7CD92"
+
+[colors.primary]
+background = "#161424"
+foreground = "#F0F0FC"
+
+[colors.selection]
+background = "#302A55"
+text = "CellForeground"
+
+[cursor.style]
+shape = "Beam"
+blinking = "Always"
+
+[cursor.vi_mode_style]
+shape = "Block"
+
+[env]
+TERM = "xterm-256color"
+
+[font]
+size = 20
+
+[font.bold]
+family = "InputMono Nerd Font"
+style = "Bold"
+
+[font.normal]
+family = "InputMono Nerd Font"
+style = "Regular"
+
+[font.offset]
+x = 0
+y = 0
+
+[window]
+blur = true
+decorations = "None"
+opacity = 0.85
+
+[window.padding]
+x = 12
+y = 12
